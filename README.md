@@ -13,10 +13,10 @@ Installation [Under Construction]
 ============
 
 Requirement:
-	1. Kindle Touch Jailbreak
-	2. Kindle Touch GUI Launcher
-	3. Python for Kindle
-	4. 
+1. Kindle Touch Jailbreak
+2. Kindle Touch GUI Launcher
+3. Python for Kindle
+4. 
 
 ============
 History [Under Construction]
