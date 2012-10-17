@@ -9,7 +9,7 @@ SotongDJ mplayer control script set for Kindle Touch Launcher (sdmplayer-kt) is 
 In this README, I will show you the Installation, the History, the To Do List (Future dev functions list), the Branch list and the License of sdmplayer-kt.
 
 Installation [Under Construction]
-====================================
+-------------------------------------
 
 Requirement:
 * Kindle Touch Jailbreak
@@ -18,19 +18,19 @@ Requirement:
 * 
 
 History [Under Construction]
-========================
+-------------------------------------
 
 
 
 To Do List [Under Construction]
-========================
+-------------------------------------
 
 
 
 Branch [Under Construction]
-========================
+-------------------------------------
 
 
 
 License [Under Construction]
-========================
+-------------------------------------
