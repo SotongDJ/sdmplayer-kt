@@ -20,6 +20,20 @@ Requirement:
 History [Under Construction]
 -------------------------------------
 
+The source code of sdmplayer-kt was come from three part:
+* [Mplayer For Kindle 0.2.0] (http://www.mobileread.com/forums/showthread.php?t=119851)
+* [SotongDJ's Mplayer Playback Script Set] (https://github.com/SotongDJ/launchpad-kindle)
+* [K5 MPlayer for Kindle 4 Touch ] (http://www.mobileread.com/forums/showthread.php?t=170213)
+
+After I get my kindle Keyboard, I found that the music playback function is too incomplete.
+Although I install Mplayer For Kindle 0.2.0, I still can not select what I want to listen.
+This is why I use my own python scripts + Mplayer (and control.sh from Mplayer For Kindle 0.2.0) + Notepad (7 Dragon) to create "SotongDJ's Mplayer Playback Script Set".
+In my opinion, "SotongDJ's Mplayer Playback Script Set" is the first music player which can select the music and generate playlist immediately.
+
+When my sister lend me her Kindle Touch, I try to use the music playback func. 
+I was disappointed once again.
+When I look back to my launchpad-kindle repo, it was messy as I mix a lot of thing inside.
+This is why I create a new repo, for new device, for new method (Launcher).
 
 
 To Do List [Under Construction]
