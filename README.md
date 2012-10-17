@@ -6,7 +6,7 @@ SotongDJ mplayer control script set for Kindle Touch Launcher
 ### Read [License] before you make any action
 
 SotongDJ mplayer control script set for Kindle Touch Launcher (sdmplayer-kt) is a set of script that use to extend the music playback function of Kindle Touch. sdmplayer-kt use GPL 3.0 License.
-In this README, I will show you the Installation, the History, the To Do List (Future dev functions list), the Branch list and the License of sdmplayer-kt.
+In this README, I will show you the Installation, the History, the structure, the To Do List (Future dev functions list), the Branch list and the License of sdmplayer-kt.
 
 Installation [Under Construction]
 -------------------------------------
@@ -15,15 +15,14 @@ Requirement:
 * Kindle Touch Jailbreak
 * Kindle Touch GUI Launcher
 * Python for Kindle
-* 
 
-History [Under Construction]
+History
 -------------------------------------
 
 The source code of sdmplayer-kt was come from three part:
 * [Mplayer For Kindle 0.2.0] (http://www.mobileread.com/forums/showthread.php?t=119851)
 * [SotongDJ's Mplayer Playback Script Set] (https://github.com/SotongDJ/launchpad-kindle)
-* [K5 MPlayer for Kindle 4 Touch ] (http://www.mobileread.com/forums/showthread.php?t=170213)
+* [K5 MPlayer for Kindle 4 Touch] (http://www.mobileread.com/forums/showthread.php?t=170213)
 
 After I get my kindle Keyboard, I found that the music playback function is too incomplete.
 Although I install Mplayer For Kindle 0.2.0, I still can not select what I want to listen.
@@ -35,16 +34,35 @@ I was disappointed once again.
 When I look back to my launchpad-kindle repo, it was messy as I mix a lot of thing inside.
 This is why I create a new repo, for new device, for new method (Launcher).
 
+Structure
+-------------------------------------
+sdmplayer-kt have two part, one is using Linux Shell Script Language(sh), another part is using Python Script Language(Python). 
+shell.sh(sh part)is base on control.sh from "Mplayer For Kindle 0.2.0" and mplayer.sh from "K5 MPlayer for Kindle 4 Touch". shell.sh is use for control mplayer. 
+python part is fork from gensl.py and genpl.py. 
+gensl.py generate the lists for user to select.
+genpl.py generate playlist from files created by gensl.py.
 
 To Do List [Under Construction]
 -------------------------------------
-
-
+* Nothing to say until I finish porting
 
 Branch [Under Construction]
 -------------------------------------
+* Nothing to say until I finish porting
 
-
-
-License [Under Construction]
+License
 -------------------------------------
+    This file is part of sdmplayer-kt.
+
+    sdmplayer-kt is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    sdmplayer-kt is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with sdmplayer-kt.  If not, see <http://www.gnu.org/licenses/>.
