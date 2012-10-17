@@ -5,11 +5,9 @@ import sys
 import os
 ## =======================================================================
 ## -----------Change it if different---------
-global configfile,npdir,kndir,logdir
-configfile='/mnt/us/SotongDJ/SotongDJ.conf'
-npdir='/mnt/us/.active-content-data/8a5982e82ae68fb2012bc688405e0026/work/user'
-kndir='/mnt/us/developer/KindleNote/work'
-logdir='/mnt/us/documents/log'
+global configfile,sdmdir
+configfile='/mnt/us/extensions/sdmplayer/sdmplayer.conf'
+sdmdir='/mnt/us/extensions/sdmplayer'
 ## =======================================================================
 ## ---------------Argument---------------------------------
 def argv(value,type):
@@ -49,7 +47,7 @@ def edvalue(key,value,lib,path):
     lib.update({key:value})
     file=open(path,'w')
     for yek in lib:
-        file.write(yek+'='+lib.get(yek)+'\n')
+        file.write(yek+':'+lib.get(yek)+'\n')
     file.close()
 ## -----------Determine---------
 def viewvalue(key,defaultvalue,confpath):
@@ -63,43 +61,15 @@ def viewvalue(key,defaultvalue,confpath):
     elif chkvlue(confpath) == 'false':
         edvalue(key,defaultvalue,rdvalue(confpath),confpath)
         return defaultvalue
-## ---------------Change---------------------------------
-def change(value):
-    thing=''
-    status=os.system('rm '+npdir+'/00-ListLocateAt-*')
-    status=os.system('rm '+kndir+'/00-ListLocateAt-*')
-    edvalue('env',value,rdvalue(configfile),configfile)
-    if value == 'notepad':
-        thing='Notepad'
-    elif value == 'kindlenote':
-        thing='KindleNote'
-    elif value == 'chinese':
-        thing='KindleNote'
-    status=os.system('touch '+npdir+'/00-ListLocateAt-'+thing+'.txt')
-    status=os.system('touch '+kndir+'/00-ListLocateAt-'+thing+'.txt')
 ## =======================================================================
 temp="/tmp/filelisttemp"
 playlist="/tmp/mplayer.playlist"
-def mpenv(): ##notepaddir,nonselectstate,nss,splitnum
-    ## old name:general()
-    select=viewvalue('env','kindlenote',configfile)
-    ## -----------Kindle Editor Option---------
-    ## What is your default editor in kindle?
-    ## Answer:
-    ## `notepad` for Notepad (7 Dragons)
-    ## `kindlenote` for KindleNote (proDOOMman)
-    ## `chinese` for KindleNote (proDOOMman) and the Kindle has PinYin IME
-    if select == 'notepad':
-        notepaddir=npdir
-        splitnum=50
-    else:
-        notepaddir=kndir
-        splitnum=20
-    if select == 'chinese':
-        nonselectstate='【不要】'
-    else:
-        nonselectstate="!:"
+def mpenv(): 
+    select=viewvalue('lang','english',configfile)
+    notepaddir=sdmdir+"/lists"
+    nonselectstate=viewvalue('nonselectstate','english',sdmdir+"settings/"+select)
     nss='\n'+nonselectstate
+    splitnum=15
     return {'notepaddir':notepaddir,'nonselectstate':nonselectstate,'nss':nss,'splitnum':splitnum}
 ## ---------------words-------------------------------
 def words(thing):
@@ -111,7 +81,6 @@ def words(thing):
         word02="## 移除“"+nonselectstate+"”以选择您要播放的媒体（如歌曲及录音）。\n"
         word03="## 移除“"+nonselectstate+"”以选择您要播放的播放列表。\n"
     else:
-        word01="## Select the mode below by remove \'!\', vice versa\n## (repeat mode is enabled by default)\n## :!playall: :!shuffle:"# :repeat:"
         selword01="\n##\n## m3u Control Section:\n## :!m3u: (m3u Playlist support)\n## (If you enable Shuffle and m3u at same time,\n##	 the songs in m3u will be arrange ramdomly)\n##\n"## :!pl2m3u:NAME: \n## (turn your choice(s) into a m3u playlist\n##  which name is \"NAME.m3u\", if \"NAME\" remain,\n## the name will be \"yymmddhhmm.m3u\")"
         word02="##Select the"+thing+"(s) you want to play by remove \'"+nonselectstate+"\'\n"
         word03="##Select the m3u playlist(s) you want to play by remove \'"+nonselectstate+"\'\n"
@@ -153,6 +122,8 @@ if argv('config.py','dtm') == 'true':
         print 'action=change'
         change(argv('value','selection'))
     elif '--help' in sys.argv:
+        print "Sorry, this section neeed to be Rewrite."
+        print "=================================="
         print "config.py: Strings Configuration"
         print "Usage: python config.py { --key=[KEY] --value=[VALUE]|--help }"
         print "\nKEY:\n        `test` for Debug Usage\n         `change` for Change Language and Editor which MyMplayer rely"
