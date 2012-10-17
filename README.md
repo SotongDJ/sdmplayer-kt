@@ -16,7 +16,7 @@ Requirement:
 * Kindle Touch GUI Launcher
 * Python for Kindle
 
-History
+Where smplayer-kt come from? (Brief History)
 -------------------------------------
 
 The source code of sdmplayer-kt was come from three part:
@@ -37,7 +37,7 @@ This is why I create a new repo, for new device, for new method (Launcher).
 Structure
 -------------------------------------
 sdmplayer-kt have two part, one is using Linux Shell Script Language(sh), another part is using Python Script Language(Python). 
-shell.sh(sh part)is base on control.sh from "Mplayer For Kindle 0.2.0" and mplayer.sh from "K5 MPlayer for Kindle 4 Touch". shell.sh is use for control mplayer. 
+shell.sh(sh part)is base on control.sh from "Mplayer For Kindle 0.2.0", mplayer.sh from "K5 MPlayer for Kindle 4 Touch" and leafpad.sh from "Leafpad". shell.sh is use for control mplayer. 
 python part is fork from gensl.py and genpl.py. 
 gensl.py generate the lists for user to select.
 genpl.py generate playlist from files created by gensl.py.
@@ -66,3 +66,10 @@ License
 
     You should have received a copy of the GNU General Public License
     along with sdmplayer-kt.  If not, see <http://www.gnu.org/licenses/>.
+
+History (dd-mm-yyyy)
+-------------------------------------
+17-10-2012
+* Copying code from launchpad-kindle repo
+* Tweak python and shell scripts to fit Kindle Touch Launcher Environment
+* Change workflow to fit Kindle Touch Launcher Environment

@@ -1,0 +1,82 @@
+{
+	"items": [
+		{
+			"name": "sdmplayer", 
+			"priority": 1, 
+			"items": [
+				{
+					"name": "Play All", 
+					"priority": 1, 
+					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
+					"params": "playall"
+				}, 
+				{
+					"name": "Play All (Random Mode)", 
+					"priority": 2, 
+					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
+					"params": "playrand"
+				}, 
+				{
+					"name": "Select Songs", 
+					"priority": 3, 
+					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
+					"params": "select"
+				},
+				{
+					"name": "Play Songs", 
+					"priority": 4, 
+					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
+					"params": "genpl"
+				},
+				{
+					"name": "Pause", 
+					"priority": 5, 
+					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
+					"params": "pause"
+				},
+				{
+					"name": "Stop", 
+					"priority": 6, 
+					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
+					"params": "stop"
+				},
+				{
+					"name": "Previous Songs", 
+					"priority": 7, 
+					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
+					"params": "prev"
+				},
+				{
+					"name": "Next Songs", 
+					"priority": 8, 
+					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
+					"params": "next"
+				},
+				{
+					"name": "Regenerate Lists", 
+					"priority": 2,  
+					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
+					"params": "gensl"
+				},
+				{
+					"name": "Extra...", 
+					"priority": 9,
+					"items": [
+						{
+							"name": "Settings", 
+							"priority": 1,  
+							"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
+							"params": "settings"
+						},
+						{
+							"name": "Kill Kindle Music Player", 
+							"priority": 3, 
+							"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
+							"params": "kill"
+						}
+					]
+				}
+			]
+		}
+	]
+}
