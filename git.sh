@@ -5,9 +5,7 @@ echo "from Kindle Keyboard before push to server and "
 echo "the changelogs (include SCL) were added the desc. of the change."
 read null
 echo  Add change
-rm -f ~/github/launchpad-kindle/*temp
-rm -f ~/github/launchpad-kindle/*.pyc
-rm -f ~/github/launchpad-kindle/*.conf
+rm -f ~/github/sdmplayer-kt/sdmplayer/py/*.pyc
 echo --------------------------------------------
 echo Commit change
 echo --------------------------------------------

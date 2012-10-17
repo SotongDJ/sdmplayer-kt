@@ -47,7 +47,7 @@ def edvalue(key,value,lib,path):
     lib.update({key:value})
     file=open(path,'w')
     for yek in lib:
-        file.write(yek+':'+lib.get(yek)+'\n')
+        file.write(yek+'='+lib.get(yek)+'\n')
     file.close()
 ## -----------Determine---------
 def viewvalue(key,defaultvalue,confpath):
@@ -67,41 +67,38 @@ playlist="/tmp/mplayer.playlist"
 def mpenv(): 
     select=viewvalue('lang','english',configfile)
     notepaddir=sdmdir+"/lists"
-    nonselectstate=viewvalue('nonselectstate','english',sdmdir+"settings/"+select)
+    nonselectstate="-!"
     nss='\n'+nonselectstate
-    splitnum=15
+    splitnum=10
     return {'notepaddir':notepaddir,'nonselectstate':nonselectstate,'nss':nss,'splitnum':splitnum}
 ## ---------------words-------------------------------
 def words(thing):
-    nonselectstate=mpenv().get('nonselectstate')
-    select=viewvalue('env','kindlenote',configfile)
+    nonselectstate="-!"
+    select=viewvalue('lang','english',configfile)
     if select == 'chinese':
-        word01="## 去掉选项前的“不要”即可开启之，反之亦然。\n## 【不要全部播放】 【不要随机播放】\n##（注：重复模式默认开启，目前仍不能选择关闭。）"
-        selword01="\n##\n## m3u 控制选项：\n## 【不要m3u】\n## （需不需要支持m3u播放列表播放。）\n## 注：\n##   当您同时选择开启m3u和随机播放时，\n##	  m3u列表里的所有歌曲会和其他歌曲一起乱序播放。\n"##\n## 【不要pl2m3u:NAME】\n## （需不需要把您要播放的媒体编成m3u播放列表,\n##  以NAME.m3u为名，如未更改NAME，将自动以时间日期命名）\n"
+        word01="## 你可以用Leafpad打开其他文本文件\n## 选择你要播放的歌曲\n##\n## 去掉选项前的“no”即可开启之，反之亦然。\n## 【no全部播放】 【no随机播放】\n##（注：重复模式默认开启，目前仍不能选择关闭。）"
+        selword01="\n##\n## m3u 控制选项：\n## 【nom3u】\n## （需不需要支持m3u播放列表播放。）\n## 注：\n##   当您同时选择开启m3u和随机播放时，\n##	  m3u列表里的所有歌曲会和其他歌曲一起乱序播放。\n"##\n## 【不要pl2m3u:NAME】\n## （需不需要把您要播放的媒体编成m3u播放列表,\n##  以NAME.m3u为名，如未更改NAME，将自动以时间日期命名）\n"
         word02="## 移除“"+nonselectstate+"”以选择您要播放的媒体（如歌曲及录音）。\n"
         word03="## 移除“"+nonselectstate+"”以选择您要播放的播放列表。\n"
-    else:
-        selword01="\n##\n## m3u Control Section:\n## :!m3u: (m3u Playlist support)\n## (If you enable Shuffle and m3u at same time,\n##	 the songs in m3u will be arrange ramdomly)\n##\n"## :!pl2m3u:NAME: \n## (turn your choice(s) into a m3u playlist\n##  which name is \"NAME.m3u\", if \"NAME\" remain,\n## the name will be \"yymmddhhmm.m3u\")"
+    elif select == 'english':
+        word01="## You can start select the song\n## by open other playlist(text file) using Leafpad\n##\n## Select the mode below by remove \'no\', vice versa\n## (repeat mode is enabled by default)\n## :noplayall: :noshuffle:"
+        selword01="\n##\n## m3u Control Section:\n## :nom3u: (m3u Playlist support)\n## (If you enable Shuffle and m3u at same time,\n##	 the songs in m3u will be arrange ramdomly)\n##\n"## :!pl2m3u:NAME: \n## (turn your choice(s) into a m3u playlist\n##  which name is \"NAME.m3u\", if \"NAME\" remain,\n## the name will be \"yymmddhhmm.m3u\")"
         word02="##Select the"+thing+"(s) you want to play by remove \'"+nonselectstate+"\'\n"
         word03="##Select the m3u playlist(s) you want to play by remove \'"+nonselectstate+"\'\n"
     return {'word01':word01,'selword01':selword01,'word02':word02,'word03':word03}
 ## ---------------source folder-------------------------------
 musicdir="/mnt/us/music"
-recorddir="/mnt/us/record"
-strlist="/mnt/us/mplayer/playlist"
 ## ---------------list file head-------------------------------
 forpledit=mpenv().get('notepaddir')+"/01-Playlist"
-forrecdit=mpenv().get('notepaddir')+"/02-Reclist"
-forstrdit=mpenv().get('notepaddir')+"/03-Strlist"
 ## ---------------Order---------------------------------
 def oder():
-    select=viewvalue('env','kindlenote',configfile)
+    select=viewvalue('lang','english',configfile)
     if select == 'chinese':
         ordplayall="【全部播放】"
         ordshuffle="【随机播放】"
         ordm3u="【m3u】"
         ordpl2m3u="【pl2m3u】"
-    else:
+    elif select == 'english':
         ordplayall=':playall:'
         ordshuffle=':shuffle:'
         ordm3u=':m3u:'
@@ -111,16 +108,12 @@ def oder():
 if argv('config.py','dtm') == 'true':
     if argv('key','selection') == 'test':
         print mpenv()
-        print words('nothing')
+        print words('~wahahaha~')
         print source()
         print head()
         print oder()
     if argv('key','selection') == 'dtmtest':
-        print viewvalue('env','kindlenote',configfile)
-        print viewvalue('nowplaying','no',configfile)
-    elif argv('key','selection') == 'change':
-        print 'action=change'
-        change(argv('value','selection'))
+        print viewvalue('lang','english',configfile)
     elif '--help' in sys.argv:
         print "Sorry, this section neeed to be Rewrite."
         print "=================================="

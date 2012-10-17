@@ -43,10 +43,6 @@ def ouput(result,source):
     for line in result:
         file.write(source+'/'+line+"\n")
     file.close()
-    if config.viewvalue('nowplaying','no',config.configfile) == 'yes':
-        file2=open(config.logdir+'/NowPlaying.txt','w')
-        file2.write("\n".join(result))
-        file2.close()
 ## --------------for test--------------------------------
 def ouputtest(result):
     print '\n'.join(result)

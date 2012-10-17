@@ -1,3 +1,5 @@
 nonselectstate=!-
 word01=## Select the mode below by remove \'!\', vice versa\n## (repeat mode is enabled by default)\n## :!playall: :!shuffle:
-
+selword01="\n##\n## m3u Control Section:\n## :!m3u: (m3u Playlist support)\n## (If you enable Shuffle and m3u at same time,\n##	 the songs in m3u will be arrange ramdomly)\n##\n"## :!pl2m3u:NAME: \n## (turn your choice(s) into a m3u playlist\n##  which name is \"NAME.m3u\", if \"NAME\" remain,\n## the name will be \"yymmddhhmm.m3u\")"
+word02=##Select the"+thing+"(s) you want to play by remove \'"+nonselectstate+"\'\n
+word03=##Select the m3u playlist(s) you want to play by remove \'"+nonselectstate+"\'\n

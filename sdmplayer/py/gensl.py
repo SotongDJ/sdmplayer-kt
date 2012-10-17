@@ -14,7 +14,7 @@ splitnum=config.mpenv().get('splitnum')
 global word01,selword01,word02,word03
 word01=config.words('').get('word01')
 selword01=config.words('').get('selword01')
-#word02=config.words(thing).get('word02') #Please use 'Find' to find the command
+word02=config.words(thing).get('word02') #Please use 'Find' to find the command
 word03=config.words('').get('word03')
 ## ---------------source folder-------------------------------
 global musicdir,recorddir,strlist
