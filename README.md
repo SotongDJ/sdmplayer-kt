@@ -44,11 +44,13 @@ shell.sh is base on:
 * menu.json, "K5 MPlayer for Kindle 4 Touch"
 * leafpad.sh, "Leafpad for Kindle Touch"
 shell.sh is use for control mplayer. 
+
 ### python part
 gensl.py and genpl.py is base on the same file in "SotongDJ's Mplayer Playback Script Set".
 The function of python script is:
 * gensl.py generate the lists for user to select.
 * genpl.py generate playlist from files created by gensl.py.
+
 ### Binary part
 Contain:
 * mplayer, "Mplayer For Kindle 0.2.0"
