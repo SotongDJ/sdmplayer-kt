@@ -23,6 +23,7 @@ The source code of sdmplayer-kt was come from three part:
 * [Mplayer For Kindle 0.2.0] (http://www.mobileread.com/forums/showthread.php?t=119851)
 * [SotongDJ's Mplayer Playback Script Set] (https://github.com/SotongDJ/launchpad-kindle)
 * [K5 MPlayer for Kindle 4 Touch] (http://www.mobileread.com/forums/showthread.php?t=170213)
+* [Leafpad for Kindle Touch](http://www.fabiszewski.net/kindle-notepad/)
 
 After I get my kindle Keyboard, I found that the music playback function is too incomplete.
 Although I install Mplayer For Kindle 0.2.0, I still can not select what I want to listen.
@@ -36,11 +37,22 @@ This is why I create a new repo, for new device, for new method (Launcher).
 
 Structure
 -------------------------------------
-sdmplayer-kt have two part, one is using Linux Shell Script Language(sh), another part is using Python Script Language(Python). 
-shell.sh(sh part)is base on control.sh from "Mplayer For Kindle 0.2.0", mplayer.sh from "K5 MPlayer for Kindle 4 Touch" and leafpad.sh from "Leafpad". shell.sh is use for control mplayer. 
-python part is fork from gensl.py and genpl.py. 
-gensl.py generate the lists for user to select.
-genpl.py generate playlist from files created by gensl.py.
+sdmplayer-kt have three part: Linux Shell Script Language(sh), Python Script Language(Python) and Binary part. 
+### shell.sh (sh part)
+shell.sh is base on:
+* control.sh, "Mplayer For Kindle 0.2.0"
+* menu.json, "K5 MPlayer for Kindle 4 Touch"
+* leafpad.sh, "Leafpad for Kindle Touch"
+shell.sh is use for control mplayer. 
+### python part
+gensl.py and genpl.py is base on the same file in "SotongDJ's Mplayer Playback Script Set".
+The function of python script is:
+* gensl.py generate the lists for user to select.
+* genpl.py generate playlist from files created by gensl.py.
+### Binary part
+Contain:
+* mplayer, "Mplayer For Kindle 0.2.0"
+* leafpad, "Leafpad for Kindle Touch"
 
 To Do List [Under Construction]
 -------------------------------------

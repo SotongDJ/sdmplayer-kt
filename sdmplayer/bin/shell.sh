@@ -57,8 +57,8 @@ case "$1" in
 		loadplaylist /tmp/mplayer.playlist
 		;;
 	select)
-		export HOME=${EXTENSION}/settings
-		export PATH=$PATH:${EXTENSION}/bin
+		export HOME=${INSTALLDIR}/settings
+		export PATH=$PATH:${INSTALLDIR}/bin
 		init_orientation=`/usr/bin/lipc-get-prop com.lab126.winmgr orientationLock`
 		/usr/bin/lipc-set-prop com.lab126.winmgr orientationLock U
 		/usr/bin/lipc-set-prop -s com.lab126.keyboard open net.fabiszewski.leafpad:Abc:1
@@ -87,12 +87,12 @@ case "$1" in
 		$pythonbin $gensl --playlist
 		;;
 	settings)
-		export HOME=${EXTENSION}/settings
-		export PATH=$PATH:${EXTENSION}/bin
+		export HOME=${INSTALLDIR}/settings
+		export PATH=$PATH:${INSTALLDIR}/bin
 		init_orientation=`/usr/bin/lipc-get-prop com.lab126.winmgr orientationLock`
 		/usr/bin/lipc-set-prop com.lab126.winmgr orientationLock U
 		/usr/bin/lipc-set-prop -s com.lab126.keyboard open net.fabiszewski.leafpad:Abc:1
-		${INSTALLDIR}/bin/leafpad ${EXTENSION}/settings/sdmplayer.conf
+		${INSTALLDIR}/bin/leafpad ${INSTALLDIR}/settings/sdmplayer.conf
 		/usr/bin/lipc-set-prop com.lab126.winmgr orientationLock ${init_orientation}
 		/usr/bin/lipc-set-prop -s com.lab126.keyboard close net.fabiszewski.leafpad
 		;;
