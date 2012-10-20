@@ -26,7 +26,7 @@
 					"name": "Play Songs", 
 					"priority": 4, 
 					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
-					"params": "genpl"
+					"params": "playlist"
 				},
 				{
 					"name": "Pause", 

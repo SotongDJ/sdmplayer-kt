@@ -20,13 +20,9 @@ playlist=config.playlist
 ## ---------------source folder-------------------------------
 global musicdir,recorddir,strlist
 musicdir=config.musicdir
-recorddir=config.recorddir
-strlist=config.strlist
 ## ---------------list file head-------------------------------
 global forpledit,forrecdit,forstrdit
 forpledit=config.forpledit
-forrecdit=config.forrecdit
-forstrdit=config.forstrdit
 ## ---------------Order---------------------------------
 global ordplayall,ordshuffle,ordm3u,ordpl2m3u
 ordplayall=config.oder().get('ordplayall')
@@ -39,7 +35,7 @@ ordpl2m3u=config.oder().get('ordpl2m3u')
 ## ----------------------------------------------
 def ouput(result,source):
     file=open(playlist,'w')
-    debug('print \'Write into Playlist\'')
+    debug('print \'Write into Playlist, which is locate at: '+playlist+'\'')
     for line in result:
         file.write(source+'/'+line+"\n")
     file.close()
@@ -48,6 +44,8 @@ def ouputtest(result):
     print '\n'.join(result)
 ## ----------------------------------------------
 def process(sets,modenum,source):
+    if dbmd=='on':                       ##verbose
+        print "=====\nStart Process\n====="
     result=[]
     for obj in sets:
         if modenum== 0:
@@ -58,6 +56,10 @@ def process(sets,modenum,source):
             if modenum in [1,3]:
                 if ".m3u" not in obj:
                     result.append(obj.replace(nonselectstate,''))
+            elif modenum==2:
+                if nonselectstate not in obj:
+                    if ".m3u" not in obj:
+                        result.append(obj)
         elif modenum>=10:
             if modenum not in [11,13]:
                 if nonselectstate not in obj:
@@ -72,6 +74,9 @@ def process(sets,modenum,source):
                 elif ".m3u" in obj:
                     for line in open(source+'/'+obj.replace(nonselectstate,'')).read().splitlines():
                         result.append(line.replace(source+'/',''))
+    if dbmd=='on':                       ##verbose
+        print "Before Shuffle:"
+        ouputtest(result)
     if modenum<10:
         if modenum>=2:
             random.shuffle(result)
@@ -81,6 +86,9 @@ def process(sets,modenum,source):
         random.shuffle(result)
         random.shuffle(result)
         random.shuffle(result)
+    if dbmd=='on':                       ##verbose
+        print "After Shuffle:"
+        ouputtest(result)
     return result
 ## ----------------------------------------------
 def ascertain(listh):
@@ -134,14 +142,6 @@ elif "--playlist" in sys.argv:
     source=musicdir
     listh=forpledit
     ouput(process(genlist(source,listh),ascertain(listh),source),source)
-elif "--reclist" in sys.argv:
-    source=recorddir
-    listh=forrecdit
-    ouput(process(genlist(source,listh),ascertain(listh),source),source)
-elif "--strlist" in sys.argv:
-    listh=forstrdit
-    plist=notepaddir+'/'+listh+".txt"
-    ouput(process(convlist(plist),ascertain(listh)),source)
 elif '--help' in sys.argv:
     print "genpl.py: Playlist Generator"
     print "Usage: "

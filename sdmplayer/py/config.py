@@ -6,7 +6,7 @@ import os
 ## =======================================================================
 ## -----------Change it if different---------
 global configfile,sdmdir
-configfile='/mnt/us/extensions/sdmplayer/sdmplayer.conf'
+configfile='/mnt/us/extensions/sdmplayer/settings/sdmplayer.conf'
 sdmdir='/mnt/us/extensions/sdmplayer'
 ## =======================================================================
 ## ---------------Argument---------------------------------

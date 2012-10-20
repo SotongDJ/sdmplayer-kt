@@ -4,6 +4,7 @@
 
 ## /mnt/us is the root directory when mounting the Kindle via USB
 INSTALLDIR=/mnt/us/extensions/sdmplayer
+BINDIR=/mnt/us/extensions/sdmplayer/bin
 pythonbin=/mnt/us/python/bin/python
 genpl=/mnt/us/extensions/sdmplayer/py/genpl.py
 gensl=/mnt/us/extensions/sdmplayer/py/gensl.py
@@ -12,9 +13,8 @@ gensl=/mnt/us/extensions/sdmplayer/py/gensl.py
 NICENESS="-10"
 
 FIFO=/tmp/mplayer.fifo
-##MPLAYER="nice -n$NICENESS $INSTALLDIR/mplayer -ao alsa -slave -input file=$FIFO"
-MPLAYER="nice -n$NICENESS $INSTALLDIR/mplayer -ao alsa -slave -quiet -input file=$FIFO"
-SHUF="$INSTALLDIR/shuf"
+##MPLAYER="nice -n$NICENESS $BINDIR/mplayer -ao alsa -slave -input file=$FIFO"
+MPLAYER="nice -n$NICENESS $BINDIR/mplayer -ao alsa -slave -quiet -input file=$FIFO"
 
 if [ ! -e $FIFO ]; then
   mkfifo $FIFO
@@ -67,7 +67,7 @@ case "$1" in
 		/usr/bin/lipc-set-prop com.lab126.winmgr orientationLock ${init_orientation}
 		/usr/bin/lipc-set-prop -s com.lab126.keyboard close net.fabiszewski.leafpad
 		;;
-	genpl)
+	playlist)
 		$pythonbin $genpl --playlist
 		loadplaylist /tmp/mplayer.playlist
 		;;

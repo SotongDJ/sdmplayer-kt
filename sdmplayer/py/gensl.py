@@ -14,18 +14,14 @@ splitnum=config.mpenv().get('splitnum')
 global word01,selword01,word02,word03
 word01=config.words('').get('word01')
 selword01=config.words('').get('selword01')
-word02=config.words(thing).get('word02') #Please use 'Find' to find the command
+#word02=config.words(thing).get('word02') #Please use 'Find' to find the command
 word03=config.words('').get('word03')
 ## ---------------source folder-------------------------------
-global musicdir,recorddir,strlist
-musicdir=config.musicdir
-recorddir=config.recorddir
-strlist=config.strlist
+global musicdir
+musicdir='/mnt/us/music'
 ## ---------------list file head-------------------------------
-global forpledit,forrecdit,forstrdit
+global forpledit
 forpledit=config.forpledit
-forrecdit=config.forrecdit
-forstrdit=config.forstrdit
 ## ---------------temporary method-------------------------------
 global letterset,purels
 letterset=[['0','1','2','3','4','5','6','7','8','9'],['A','a'],['B','b'],['C','c'],['D','d'],['E','e'],['F','f'],['G','g'],['H','h'],['I','i'],['J','j'],['K','k'],['L','l'],['M','m'],['N','n'],['O','o'],['P','p'],['Q','q'],['R','r'],['S','s'],['T','t'],['U','u'],['V','v'],['W','w'],['X','x'],['Y','y'],['Z']]
@@ -35,6 +31,27 @@ for letters in letterset:
             purels.append(letter)
 ## ----------------------------------------------
 ## Define function
+## ----------------------------------------------
+## Verbose Mode
+global verbosesw
+verbosesw="true"
+#verbosesw="false"
+def verbose(name,data):
+    if verbosesw == "true":
+        if name == "lib":
+            print "---------------------Initial Library-------------------------"
+            print data
+            print "-------------------------------------------------------------"
+        if name == "arrange":
+            print "---------------------Arrange Songs-------------------------"
+            print data
+            print "-------------------------------------------------------------"
+        if name == "start write":
+            print "---------------------Start Writing File---------------------"
+            print "file Name: "+data
+        if name == "close write":
+            print "Finish"
+            print "-------------------------------------------------------------"
 ## ----------------------------------------------
 def mode(listh,enm):
     modef=open(listh+"-Mode.txt","w")
@@ -58,6 +75,7 @@ def gensl(otypes,source,listh,thing):
         else:
             library.update({letters[0]:[]})
     library.update({'Other':[]})
+    verbose("lib",library)
     ## ---------------------Filter Songs-------------------------
     for line in open(temp).read().splitlines():
         for type in types:
@@ -75,11 +93,13 @@ def gensl(otypes,source,listh,thing):
                     library.get(letters[0]).append(song)
         if song[0] not in purels:
             library.get('Other').append(song)
+    verbose("arrange",library)
     ## ---------------Calculate and Create Filelists---------------------
     filelib={}
     ## Start create selection of media which file name start with Numbers
     pagenum=1
     linenum=len(library.get("Numbers"))
+    verbose("start write",listh+'-Part'+str(pagenum)+"-Num.txt")
     listf=open(listh+'-Part'+str(pagenum)+"-Num.txt",'w')
     listf.write(config.words(thing).get('word02'))
     listf.write(nonselectstate+nss.join(library.get("Numbers"))+'\n')
@@ -96,6 +116,8 @@ def gensl(otypes,source,listh,thing):
                 pagenum=pagenum+1
                 linenum=tempnum
                 listf.close()
+                verbose("close write","")
+                verbose("start write",listh+'-Part'+str(pagenum)+"-"+letters[0]+".txt")
                 listf=open(listh+'-Part'+str(pagenum)+"-"+letters[0]+".txt",'w')
                 listf.write(config.words(thing).get('word02'))
                 listf.write(nonselectstate+nss.join(library.get(letters[0]))+'\n')
@@ -105,6 +127,8 @@ def gensl(otypes,source,listh,thing):
                     if templistnum+splitnum<=tempnum:
                         pagenum=pagenum+1
                         listf.close()
+                        verbose("close write","")
+                        verbose("start write",listh+'-Part'+str(pagenum)+"-"+letters[0]+library.get(letters[0])[templistnum][1]+".txt")
                         listf=open(listh+'-Part'+str(pagenum)+"-"+letters[0]+library.get(letters[0])[templistnum][1]+".txt",'w')
                         listf.write(config.words(thing).get('word02'))
                         listf.write(nonselectstate+nss.join(library.get(letters[0])[templistnum:(templistnum+splitnum+1)])+'\n')
@@ -112,6 +136,8 @@ def gensl(otypes,source,listh,thing):
                     elif templistnum+splitnum>tempnum:
                         pagenum=pagenum+1
                         listf.close()
+                        verbose("close write","")
+                        verbose("start write",listh+'-Part'+str(pagenum)+"-"+letters[0]+library.get(letters[0])[templistnum][1]+".txt")
                         listf=open(listh+'-Part'+str(pagenum)+"-"+letters[0]+library.get(letters[0])[templistnum][1]+".txt",'w')
                         listf.write(config.words(thing).get('word02'))
                         listf.write(nonselectstate+nss.join(library.get(letters[0])[templistnum:(tempnum+1)])+'\n')
@@ -123,20 +149,26 @@ def gensl(otypes,source,listh,thing):
         linenum=linenum+tempnum
         listf.write(nonselectstate+nss.join(library.get("Other"))+'\n')
         listf.close()
+        verbose("close write","")
     elif linenum+tempnum>=splitnum:
         if tempnum<=splitnum:
             pagenum=pagenum+1
             listf.close()
+            verbose("close write","")
+            verbose("start write",listh+'-Part'+str(pagenum)+"-Oth"+".txt")
             listf=open(listh+'-Part'+str(pagenum)+"-Oth"+".txt",'w')
             listf.write(config.words(thing).get('word02'))
             listf.write(nonselectstate+nss.join(library.get("Other"))+'\n')
             listf.close()
+            verbose("close write","")
         elif tempnum>splitnum:  ## Start seperate list when the number of items more then splitnum
             templistnum=0
             for ra in range(1,10001):
                 if templistnum+splitnum<=tempnum:
                     pagenum=pagenum+1
                     listf.close()
+                    verbose("close write","")
+                    verbose("start write",listh+'-Part'+str(pagenum)+"-Oth"+".txt")
                     listf=open(listh+'-Part'+str(pagenum)+"-Oth"+".txt",'w')
                     listf.write(config.words(thing).get('word02'))
                     listf.write(nonselectstate+nss.join(library.get("Other")[templistnum:(templistnum+splitnum+1)])+'\n')
@@ -144,10 +176,13 @@ def gensl(otypes,source,listh,thing):
                 elif templistnum+splitnum>tempnum:
                     pagenum=pagenum+1
                     listf.close()
+                    verbose("close write","")
+                    verbose("start write",listh+'-Part'+str(pagenum)+"-Oth"+".txt")
                     listf=open(listh+'-Part'+str(pagenum)+"-Oth"+".txt",'w')
                     listf.write(config.words(thing).get('word02'))
                     listf.write(nonselectstate+nss.join(library.get("Other")[templistnum:(tempnum+1)])+'\n')
                     listf.close()
+                    verbose("close write","")
                     break
     status=os.system("rm "+temp)
 ## ----------------------------------------------
@@ -204,21 +239,6 @@ if config.argv('gensl.py','dtm') == 'true':
         gensl(otypes,source,listh,thing)
         mode(listh,1)
         genm3u(source,listh)
-    elif "--reclist" in sys.argv:
-        otypes="wav"
-        source=recorddir
-        listh=forrecdit
-        thing='records'
-        clean(listh)
-        gensl(otypes,source,listh,thing)
-        mode(listh,0)
-    elif "--strlist" in sys.argv:
-        otypes="http"
-        source=strlist
-        listh=forstrdit
-        thing='stream/radio'
-        clean(listh)
-        genstr(otypes,source,listh,thing)
     elif '--help' in sys.argv:
         print "gensl.py: Selection List Generator"
         print "Usage: "
