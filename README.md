@@ -94,4 +94,8 @@ History (dd-mm-yyyy)
 
 18-10-2012
 * modify README.md
-* still need test but I am fixing SSH over WIFI
+* still need test --but I am fixing SSH over WIFI--
+
+20-10-2012
+* Complete scripts
+* still need test 
