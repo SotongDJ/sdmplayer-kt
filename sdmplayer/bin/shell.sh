@@ -49,10 +49,12 @@ esac
 
 case "$1" in
 	playall)
+		killall audioServer
 		$pythonbin $genpl --playall
 		loadplaylist /tmp/mplayer.playlist
 		;;
 	playrand)
+		killall audioServer
 		$pythonbin $genpl --playrand
 		loadplaylist /tmp/mplayer.playlist
 		;;
@@ -68,6 +70,7 @@ case "$1" in
 		/usr/bin/lipc-set-prop -s com.lab126.keyboard close net.fabiszewski.leafpad
 		;;
 	playlist)
+		killall audioServer
 		$pythonbin $genpl --playlist
 		loadplaylist /tmp/mplayer.playlist
 		;;
@@ -95,9 +98,6 @@ case "$1" in
 		${INSTALLDIR}/bin/leafpad ${INSTALLDIR}/settings/sdmplayer.conf
 		/usr/bin/lipc-set-prop com.lab126.winmgr orientationLock ${init_orientation}
 		/usr/bin/lipc-set-prop -s com.lab126.keyboard close net.fabiszewski.leafpad
-		;;
-	kill)
-		killall audioServer
 		;;
 	*)
 		echo "Usage: $0 {playall|playrec|playrand|playlist|pause|stop|prev|next}"

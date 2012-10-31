@@ -1,24 +1,54 @@
 SotongDJ mplayer control script set for Kindle Touch Launcher
 ========================
-sdmplayer-kt still UNDER CONSTRUCTION
+Caution: sdmplayer-kt still UNDER DEVELOPMENT
 ========================
 
-### 注：在做任何浏览/编辑前，请阅读许可声明[License]
-### Note: Read [License] before you make any action
+### 注：在做任何浏览/编辑前，请阅读许可声明[License] (https://github.com/SotongDJ/sdmplayer-kt#license)
+### Note: Read [License] (https://github.com/SotongDJ/sdmplayer-kt#license) before you make any action
 
 Introduction
 -------------------------------------
 
 SotongDJ mplayer control script set for Kindle Touch Launcher (sdmplayer-kt) is a set of script that use to extend the music playback function of Kindle Touch. sdmplayer-kt use GPL 3.0 License.
-In this README, I will show you the Installation, the History, the structure, the To Do List (Future dev functions list), the Branch list and the License of sdmplayer-kt.
+In this README, I will show you the [Installation] (https://github.com/SotongDJ/sdmplayer-kt#installation), the [History] (https://github.com/SotongDJ/sdmplayer-kt#where-smplayer-kt-come-from-brief-history), the [Instruction] (https://github.com/SotongDJ/sdmplayer-kt#instruction), the [History] (https://github.com/SotongDJ/sdmplayer-kt#where-smplayer-kt-come-from-brief-history), the [structure] (https://github.com/SotongDJ/sdmplayer-kt#structure), the [To Do List] (https://github.com/SotongDJ/sdmplayer-kt#to-do-list) (Future dev functions list), the [Branch list] (https://github.com/SotongDJ/sdmplayer-kt#branch) and the [License] (https://github.com/SotongDJ/sdmplayer-kt#license) of sdmplayer-kt.
 
-Installation [Under Construction]
+Installation
 -------------------------------------
 
-Requirement:
-* Kindle Touch Jailbreak
-* Kindle Touch GUI Launcher
-* Python for Kindle
+### Requirement:
+Follow the instruction below to install the requirement 
+* [Kindle Touch Jailbreak] (http://wiki.mobileread.com/wiki/Kindle_Touch_Hacking#Jailbreak)
+* [Kindle Touch GUI Launcher] (http://wiki.mobileread.com/wiki/Kindle_Touch_Hacking#GUI_Launcher)
+* [Python for Kindle] (https://github.com/SotongDJ/python-bin-for-kindle-touch)
+
+### Install:
+* Download the "sdmplayer" folder by click "Download this repo as a zip file"(The Cloud with "ZIP" Word) or click [HERE] (https://github.com/SotongDJ/sdmplayer-kt/zipball/master)
+* unzip the zip file and move "sdmplayer" folder to the "extensions" folder of your Kindle touch which in USB Flash Drive mode (/mnt/us/extensions).
+
+Instruction
+-------------------------------------
+Menu: 
+
+("Repeat all" is turn on automatically and [only] can stop by changing script [now])
+* "Play All"
+Play all songs
+* "Play All (Random Mode)"
+Play all songs in Random Mode
+* "Select Songs"
+Open Leafpad for KT to choose your songs. 
+You can open by click "File">"Open" and select the txt file in "lists" folder. 
+* "Play Songs"
+Play the songs
+* "Pause"
+Pause
+* "Stop"
+Stop
+* "Previous Songs"
+Previous Songs
+* "Next Songs"
+Next Songs
+* "Regenerate Lists"
+Regenerate the selection lists
 
 Where smplayer-kt come from? (Brief History)
 -------------------------------------
@@ -60,13 +90,13 @@ Contain:
 * mplayer, "Mplayer For Kindle 0.2.0"
 * leafpad, "Leafpad for Kindle Touch"
 
-To Do List [Under Construction]
+To Do List
 -------------------------------------
-* Nothing to say until I finish porting
+* Add GUI
 
-Branch [Under Construction]
+Branch
 -------------------------------------
-* Nothing to say until I finish porting
+* UNAVAILABLE until I finish Stable Version
 
 License
 -------------------------------------
@@ -99,3 +129,12 @@ History (dd-mm-yyyy)
 20-10-2012
 * Complete scripts
 * still need test 
+
+27-10-2012
+* Complete Testing
+* Start BETA
+
+31-10-2012
+* Complete README.md
+* Hide "stop audioServer"(See the commit "[HIDESPAS]...")
+* Release via MobileRead Forum (Awaiting approval)

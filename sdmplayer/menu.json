@@ -58,18 +58,6 @@
 					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
 					"params": "gensl"
 				},
-				{
-					"name": "Settings", 
-					"priority": 10,  
-					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
-					"params": "settings"
-				},
-				{
-					"name": "Kill Kindle Music Player", 
-					"priority": 11, 
-					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
-					"params": "kill"
-				}
 			]
 		}
 	]
