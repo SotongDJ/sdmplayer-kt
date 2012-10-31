@@ -10,7 +10,7 @@ Introduction
 -------------------------------------
 
 SotongDJ mplayer control script set for Kindle Touch Launcher (sdmplayer-kt) is a set of script that use to extend the music playback function of Kindle Touch. sdmplayer-kt use GPL 3.0 License.
-In this README, I will show you the [Installation] (https://github.com/SotongDJ/sdmplayer-kt#installation), the [History] (https://github.com/SotongDJ/sdmplayer-kt#where-smplayer-kt-come-from-brief-history), the [Instruction] (https://github.com/SotongDJ/sdmplayer-kt#instruction), the [History] (https://github.com/SotongDJ/sdmplayer-kt#where-smplayer-kt-come-from-brief-history), the [structure] (https://github.com/SotongDJ/sdmplayer-kt#structure), the [To Do List] (https://github.com/SotongDJ/sdmplayer-kt#to-do-list) (Future dev functions list), the [Branch list] (https://github.com/SotongDJ/sdmplayer-kt#branch) and the [License] (https://github.com/SotongDJ/sdmplayer-kt#license) of sdmplayer-kt.
+In this README, I will show you the [Installation] (https://github.com/SotongDJ/sdmplayer-kt#installation), the [Instruction] (https://github.com/SotongDJ/sdmplayer-kt#instruction), the [History] (https://github.com/SotongDJ/sdmplayer-kt#where-smplayer-kt-come-from-brief-history), the [structure] (https://github.com/SotongDJ/sdmplayer-kt#structure), the [To Do List] (https://github.com/SotongDJ/sdmplayer-kt#to-do-list) (Future dev functions list), the [Branch list] (https://github.com/SotongDJ/sdmplayer-kt#branch) and the [License] (https://github.com/SotongDJ/sdmplayer-kt#license) of sdmplayer-kt.
 
 Installation
 -------------------------------------
