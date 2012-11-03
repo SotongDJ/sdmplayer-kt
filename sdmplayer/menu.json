@@ -17,7 +17,7 @@
 					"params": "playrand"
 				}, 
 				{
-					"name": "Select Songs", 
+					"name": "Choose Songs", 
 					"priority": 3, 
 					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
 					"params": "select"
