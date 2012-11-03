@@ -137,4 +137,8 @@ History (dd-mm-yyyy)
 31-10-2012
 * Complete README.md
 * Hide "stop audioServer"(See the commit "[HIDESPAS]...")
-* Release via MobileRead Forum (Awaiting approval)
+* Release via MobileRead Forum
+
+03-11-2012
+* Add volume control form [K5 MPlayer for Kindle 4 Touch]
+* Modify menu.json (Rearrange task inside)

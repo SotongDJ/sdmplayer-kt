@@ -23,7 +23,7 @@
 					"params": "select"
 				},
 				{
-					"name": "Play Songs", 
+					"name": "Play Playlist", 
 					"priority": 4, 
 					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
 					"params": "playlist"
@@ -41,20 +41,32 @@
 					"params": "stop"
 				},
 				{
-					"name": "Previous Songs", 
+					"name": "Volume Up", 
 					"priority": 7, 
+					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
+					"params": "volup"
+				},
+				{
+					"name": "Volume Down", 
+					"priority": 8, 
+					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
+					"params": "voldn"
+				},
+				{
+					"name": "Previous Songs", 
+					"priority": 9, 
 					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
 					"params": "prev"
 				},
 				{
 					"name": "Next Songs", 
-					"priority": 8, 
+					"priority": 10, 
 					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
 					"params": "next"
 				},
 				{
 					"name": "Regenerate Lists", 
-					"priority": 9,  
+					"priority": 11,  
 					"action": "/mnt/us/extensions/sdmplayer/bin/shell.sh", 
 					"params": "gensl"
 				},
