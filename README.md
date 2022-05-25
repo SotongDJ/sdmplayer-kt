@@ -1,28 +1,35 @@
-SotongDJ mplayer control script set for Kindle Touch Launcher
-========================
+# SotongDJ mplayer control script set for Kindle Touch Launcher
+
 Caution: sdmplayer-kt still UNDER DEVELOPMENT
-========================
 
-### 注：在做任何浏览/编辑前，请阅读许可声明[License] (https://github.com/SotongDJ/sdmplayer-kt#license)
-### Note: Read [License] (https://github.com/SotongDJ/sdmplayer-kt#license) before you make any action
+> 注：在做任何浏览/编辑前，请阅读许可声明 [License]
+>
+> Note: Read [License] before you make any action
 
-Introduction
--------------------------------------
+[License]: https://github.com/SotongDJ/sdmplayer-kt#license
+
+## Introduction
 
 SotongDJ mplayer control script set for Kindle Touch Launcher (sdmplayer-kt) is a set of script that use to extend the music playback function of Kindle Touch. sdmplayer-kt use GPL 3.0 License.
-In this README, I will show you the [Installation] (https://github.com/SotongDJ/sdmplayer-kt#installation), the [Instruction] (https://github.com/SotongDJ/sdmplayer-kt#instruction), the [History] (https://github.com/SotongDJ/sdmplayer-kt#where-smplayer-kt-come-from-brief-history), the [structure] (https://github.com/SotongDJ/sdmplayer-kt#structure), the [To Do List] (https://github.com/SotongDJ/sdmplayer-kt#to-do-list) (Future dev functions list), the [Branch list] (https://github.com/SotongDJ/sdmplayer-kt#branch) and the [License] (https://github.com/SotongDJ/sdmplayer-kt#license) of sdmplayer-kt.
+In this README, I will show you [Installation], [Instruction], [History], [Structure], the [To Do List] (Future dev functions list), [Branch list] and [License] of sdmplayer-kt.
 
-Installation
--------------------------------------
+[Installation]: https://github.com/SotongDJ/sdmplayer-kt#installation
+[Instruction]: https://github.com/SotongDJ/sdmplayer-kt#instruction
+[History]: https://github.com/SotongDJ/sdmplayer-kt#where-smplayer-kt-come-from-brief-history
+[Structure]: https://github.com/SotongDJ/sdmplayer-kt#structure
+[To Do List]: https://github.com/SotongDJ/sdmplayer-kt#to-do-list
+[Branch list]: https://github.com/SotongDJ/sdmplayer-kt#branch
 
-### Requirement:
+## Installation
+
+### Requirement
 Follow the instruction below to install the requirement 
-* [Kindle Touch Jailbreak] (http://wiki.mobileread.com/wiki/Kindle_Touch_Hacking#Jailbreak)
-* [Kindle Touch GUI Launcher] (http://wiki.mobileread.com/wiki/Kindle_Touch_Hacking#GUI_Launcher)
-* [Python for Kindle] (https://github.com/SotongDJ/python-bin-for-kindle-touch)
+* [Kindle Touch Jailbreak](http://wiki.mobileread.com/wiki/Kindle_Touch_Hacking#Jailbreak)
+* [Kindle Touch GUI Launcher](http://wiki.mobileread.com/wiki/Kindle_Touch_Hacking#GUI_Launcher)
+* [Python for Kindle](https://github.com/SotongDJ/python-bin-for-kindle-touch)
 
-### Install:
-* Download the "sdmplayer" folder by click "Download this repo as a zip file"(The Cloud with "ZIP" Word) or click [HERE] (https://github.com/SotongDJ/sdmplayer-kt/zipball/master)
+### Install
+* Download the "sdmplayer" folder by click "Download this repo as a zip file"(The Cloud with "ZIP" Word) or click [HERE](https://github.com/SotongDJ/sdmplayer-kt/zipball/master)
 * unzip the zip file and move "sdmplayer" folder to the "extensions" folder of your Kindle touch which in USB Flash Drive mode (/mnt/us/extensions).
 
 Instruction
@@ -117,6 +124,9 @@ License
 
 History (dd-mm-yyyy)
 -------------------------------------
+25-05-2022
+- modify README
+
 17-10-2012
 * Copying code from launchpad-kindle repo
 * Tweak python and shell scripts to fit Kindle Touch Launcher Environment
